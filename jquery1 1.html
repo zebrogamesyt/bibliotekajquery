@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Przykład jQuery - Animacje</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+}
+
+#box{
+    width:100px;
+    height:100px;
+    background-color:blue;
+    margin:20px auto;
+    position:relative;
+}
+
+#panel{
+    display:none;
+    background-color:lightgray;
+    padding:20px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+
+    
+    $("#hideBtn").click(function(){
+        $("#text").hide(1000);
+    });
+
+    
+    $("#showBtn").click(function(){
+        $("#text").show(1000);
+    });
+
+    
+    $("#fadeBtn").click(function(){
+        $("#box").fadeOut(1000);
+    });
+
+    
+    $("#slideBtn").click(function(){
+        $("#panel").slideDown(1000);
+    });
+
+    
+    $("#animateBtn").click(function(){
+        $("#box").animate({
+            left: '200px',
+            height: '150px',
+            width: '150px'
+        });
+    });
+
+});
+</script>
+
+</head>
+<body>
+
+<h1>Przykłady animacji jQuery</h1>
+
+<p id="text">To jest przykładowy tekst.</p>
+
+<button id="hideBtn">Ukryj tekst</button>
+<button id="showBtn">Pokaż tekst</button>
+
+<br><br>
+
+<div id="box"></div>
+
+<button id="fadeBtn">Znikanie (fadeOut)</button>
+<button id="animateBtn">Animacja (animate)</button>
+
+<br><br>
+
+<button id="slideBtn">Pokaż panel</button>
+
+<div id="panel">
+To jest ukryty panel pokazany animacją slideDown.
+</div>
+
+</body>
+</html>
